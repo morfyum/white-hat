@@ -1,0 +1,11 @@
+# Find the Gateway:
+	traceroute google.com
+
+# Try To Scan open ports
+	nmap 192.168.99.253
+
+	nmap -sS -v -v -Pn 192.168.99.253
+
+	# Scan port over closed port:
+	# Bypassing Windows IPSec filter using source port
+		nmap -sS -v -v Pn -g 88 192.168.99.253

