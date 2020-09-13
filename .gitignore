@@ -1,6 +1,9 @@
+# AIRCRACK
 *.cap
 *.csv
 *.kismet.csv
 *.kismet.*
 *.netxml
 *.log.csv
+# WIRESHARK 
+*.pcapng

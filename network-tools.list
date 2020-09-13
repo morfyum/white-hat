@@ -1,0 +1,22 @@
+PACKAGE			DESCRIPTION
+=======			===========
+arp				Show arp table. - (Address Resolution Protocol) (Címfeloldás protokol)
+				You can get MAC addresses of all device on your network.
+				LINK: https://hu.wikipedia.org/wiki/ARP
+				EXAMPLES:
+					arp -n
+					arp --verbose
+-------			-----------
+netstat			Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+        		-r, --route              display routing table
+        		-v, --verbose            be verbose
+        		-n, --numeric            don't resolve names
+       			-p, --programs           display PID/Program name for sockets
+        		-l, --listening          display listening server sockets
+		        -a, --all                display all sockets (default: connected)
+				LINK: 
+				EXAMPLES:
+					netstat -r
+					netstat -rn
+-------			-----------
+
