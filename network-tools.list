@@ -18,5 +18,6 @@ netstat			Print network connections, routing tables, interface statistics, masqu
 				EXAMPLES:
 					netstat -r
 					netstat -rn
+					netstat -tulpn
 -------			-----------
 

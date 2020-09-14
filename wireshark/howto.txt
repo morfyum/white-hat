@@ -1,3 +1,6 @@
+# LINK: 
+	- FILTERS: https://wiki.wireshark.org/DisplayFilters
+
 # HTTP login request filter:
 	http.request.method=="POST"
 
