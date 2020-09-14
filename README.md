@@ -6,6 +6,8 @@ Tricks and methods for white hat hackers
   - aircrack/
   - nmap/
   - wireshark/
+  - network-tools.list (List of useful networking tools)
+  - services (List of known services)
 
 ### 000-wordlists is contain many text file with popular passwords:
  - 10-million-password-list-top-1000k.txt
