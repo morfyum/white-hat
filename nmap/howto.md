@@ -40,7 +40,7 @@ sudo nmap -sT -p 80,443 192.168.99.165/24
 sudo nmap -sS -p 80,443 192.168.99.165/24
 ``` 
 
-# TRY TO SCAN OPEN PORTS
+# [ SCAN ] : Open ports
 ```
 # Find the Gateway:
 traceroute google.com
@@ -58,29 +58,29 @@ sudo nmap -sS -v -v -Pn -g 88 192.168.99.253
 ```
 
 
-# [ ATTACK ] : [ IP TARGET ATTACKS ]
+# [ SCAN ] : Single IP Target
 
 > apple vnc port check
 ```
 sudo nmap -p 5900 -sV -Pn -v 192.168.99.119
 ```
 
-> -A is equal OS detection, version detection, script scanning, and traceroute
+> `-A` is equal with OS detection, version detection, script scanning, and traceroute
 ```
 sudo nmap -A 192.168.99.119
 ```
 
-> VULNERABILITY CHECK
+> Vulnerability Check
 ```
 sudo nmap --script vuln 192.168.99.119
 ```
 
-> SCAN ALL OPEN PORT ON HOST:
+> Scan all Open port on host:
 ```
 sudo nmap -p- 192.168.99.165
 ```
 
-> AFP SERVER INFO (548 is a TCP protocol) 
+> AFP Server Info (548 : TCP) 
 > This is give back your target MAC address
 ```
 sudo nmap -p 548 -Pn -v --script "afp-serverinfo" 192.168.99.119
