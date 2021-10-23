@@ -7,17 +7,17 @@
 ```
 
 ```
-# SWITCHES:		TARGET		DESCRIPTION
-	-O		only 1		-> OS Detection
-	-A		only 1		-> Enable OS detection, version detection, script scanning, and traceroute
-	-p 		more		-> Scan specific ports on 1 or more host: nmap -sT -p 80,443 192.168.99.195/24
-	-p-		1 or more	-> Scan all port on targert
-	-s
-	-S		1 or more	-> Spoof source address (Firewall/ids Evasion and Spoofing) 
-	-T		more		-> Set timing template (highter is faster): T0,T1,...T5
-	-v		1 or more	-> Increase verbosity levele ( use -vv or more for greater effect)
-	-P
-	-n		?		-> No DNS resolutin (Tells Nmap to never do reverse DNS)
+# SWITCHES:	TARGET		DESCRIPTION
+  -O		only 1		-> OS Detection
+  -A		only 1		-> Enable OS detection, version detection, script scanning, and traceroute
+  -p 		more		-> Scan specific ports on 1 or more host: nmap -sT -p 80,443 192.168.99.195/24
+  -p		1 or more	-> Scan all port on targert
+  -s
+  -S		1 or more	-> Spoof source address (Firewall/ids Evasion and Spoofing) 
+  -T		more		-> Set timing template (highter is faster): T0,T1,...T5
+  -v		1 or more	-> Increase verbosity levele ( use -vv or more for greater effect)
+  -P
+  -n		?		-> No DNS resolutin (Tells Nmap to never do reverse DNS)
 ```
 
 ## Related tools
