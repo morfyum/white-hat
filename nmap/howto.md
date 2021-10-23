@@ -20,17 +20,24 @@
 	-n		?		-> No DNS resolutin (Tells Nmap to never do reverse DNS)
 ```
 
+## Related tools
+> Check your ip / network informations on Linux
+```
+ip a 
+```
 
-# [ SCAN ] : NETWORK / IP-RANGE
+
+
+# [ SCAN ] : SUBNET / IP-RANGE 
 
 ### LIST CONNECTED DEVICES ON NETWORK WITH NAMES:
 
-> You can check your ip Address on modern Linux systems with `ip a` command.
+> TODO: Subnet /24 or IP-range 192.168.99.1-165
 ```
 sudo nmap -sn 192.168.99.165/24
 ```
 
-> Scan open ports on Network 
+> Scan open specified ports on Network: 80, 443
 ```
 sudo nmap -sT -p 80,443 192.168.99.165/24
 ```
@@ -40,7 +47,7 @@ sudo nmap -sT -p 80,443 192.168.99.165/24
 sudo nmap -sS -p 80,443 192.168.99.165/24
 ``` 
 
-# [ SCAN ] : Open ports
+# [ TARGET ] : Gateway [ SCAN ] : Open ports
 ```
 # Find the Gateway:
 traceroute google.com
