@@ -48,29 +48,31 @@ sudo nmap -sS -p 80,443 192.168.99.165/24
 ``` 
 
 # [ TARGET ] : Gateway [ SCAN ] : Open ports
+
+> Find the Gateway:
 ```
-# Find the Gateway:
 traceroute google.com
+```
 
-# Chekc the GATEWAY IP:
+> Chekc the GATEWAY IP:
+```
 sudo nmap 192.168.99.253
+```
 
-# TODO
+> TODO
+```
 sudo nmap -sS -v -v -Pn 192.168.99.253
+```
 
-# Scan port over closed port:
-# Bypassing Windows IPSec filter using source port
-
+# [ TARGET ] : Windows
+> Scan port over closed port:
+> Bypassing Windows IPSec filter using source port
+```
 sudo nmap -sS -v -v -Pn -g 88 192.168.99.253
 ```
 
 
 # [ SCAN ] : Single IP Target
-
-> apple vnc port check
-```
-sudo nmap -p 5900 -sV -Pn -v 192.168.99.119
-```
 
 > `-A` is equal with OS detection, version detection, script scanning, and traceroute
 ```
@@ -82,13 +84,20 @@ sudo nmap -A 192.168.99.119
 sudo nmap --script vuln 192.168.99.119
 ```
 
-> Scan all Open port on host:
+### [ TARGET ] : Apple devices
+> apple vnc port check
 ```
-sudo nmap -p- 192.168.99.165
+sudo nmap -p 5900 -sV -Pn -v 192.168.99.119
 ```
 
 > AFP Server Info (548 : TCP) 
 > This is give back your target MAC address
 ```
 sudo nmap -p 548 -Pn -v --script "afp-serverinfo" 192.168.99.119
+```
+
+
+> Scan all Open port on host:
+```
+sudo nmap -p- 192.168.99.165
 ```
