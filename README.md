@@ -13,4 +13,4 @@ Tricks and methods for white hat hackers
  - 10-million-password-list-top-1000k.txt
  - 10-million-password-list-top-100k.txt
  - 10-million-password-list-top-10k.txt
- - info.txt
+ - info.md
