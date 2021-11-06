@@ -19,3 +19,6 @@ https://thispersondoesnotexist.com/
  - 10-million-password-list-top-100k.txt
  - 10-million-password-list-top-10k.txt
  - info.md
+
+### TODO
+[ mimikatz ]
