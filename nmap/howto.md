@@ -97,6 +97,13 @@ sudo nmap -p 548 -Pn -v --script "afp-serverinfo" 192.168.99.119
 ```
 
 
+### SCAN specific IP for PORT vulnerabilities:
+
+> 8009/tcp - ajp13 
+```
+nmap -sV --script ajp-auth,ajp-headers,ajp-methods,ajp-request -n -p 8009 <IP>
+```
+
 > Scan all Open port on host:
 ```
 sudo nmap -p- 192.168.99.165
